@@ -1,11 +1,10 @@
 import React from 'react'
 import { Route, Routes } from 'react-router'
-import HomePage from './web/pages/HomePage'
-import BlogDetailesPage from './web/pages/BlogDetailesPage'
+
 import Dashboard from './admin/pages/Dashboard'
 import AddBlog from './admin/pages/AddBlog'
 import AllBlog from './admin/pages/AllBlog'
-import PageNotFound from './web/pages/PageNotFound'
+
 import toast, { Toaster } from 'react-hot-toast';
 import EditBlog from './admin/pages/EditBlog'
 import BlogDetail from './admin/pages/BlogDetail'
@@ -19,13 +18,31 @@ import AddTeacher from './TeacherAdmin/pages/AddTeacher'
 import AllTeacher from './TeacherAdmin/pages/AllTeacher'
 import EditTeacher from './TeacherAdmin/pages/EditTeacher'
 import TeacherDetail from './TeacherAdmin/pages/TeacherDetail'
+import Home from './pages/Home'
+import Blogs from './pages/Blogs'
+import About from './pages/About'
+import Explore from './pages/Explore'
+import BlogDetails from './pages/BlogDetails'
+import ScrollToTop from './components/ScrollToTop'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
     <>
+    <ScrollToTop />
+    <Navbar />
+
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/blog/:id' element={<BlogDetailesPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/blog/:id" element={<BlogDetails />} />
+        
+         
+
+
+
         <Route path='/admin/dashboard' element={<Dashboard />} />
         <Route path='/admin/add-blog' element={<AddBlog />} />
         <Route path='/admin/all-blogs' element={<AllBlog />} />
@@ -51,7 +68,7 @@ function App() {
         <Route path='/teacher-admin/detail-teacher/:id' element={<TeacherDetail />} />
 
 
-        <Route path='*' element={<PageNotFound/>}/>
+        {/* <Route path='*' element={<PageNotFound />}/> */}
       </Routes>
       <Toaster />
     </>
