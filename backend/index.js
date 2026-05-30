@@ -19,7 +19,7 @@ const port = 3000
 const connectDB = async () => {
     try {
 
-        await mongoose.connect('mongodb+srv://snehabarnwal984_db_user:rrmNQXf3lleFvWzS@blogifycluster.9k1bl9h.mongodb.net//blogify')
+        await mongoose.connect('mongodb+srv://snehabarnwal984_db_user:rrmNQXf3lleFvWzS@blogifycluster.9k1bl9h.mongodb.net/blogify')
 
         console.log("MongoDB connected. 🥳")
 
